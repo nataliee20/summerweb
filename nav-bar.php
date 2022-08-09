@@ -76,6 +76,8 @@ $check = mysqli_fetch_array($result);
                         <a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
                          <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
                           <a href="http://localhost/summerweb/restaurants.php">Shops</a>
+                          <a href="http://localhost/summerweb/logout.php">Logout</a>
+                          <a href="http://localhost/summerweb/profile.php">Profile</a>
                       </div>';
                     }
 ?>

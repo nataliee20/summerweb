@@ -14,6 +14,7 @@ if(isset($_POST['Submit'])){
 	$UserName = $_POST['UserName'];
 	$Password = $_POST['Password'];
 
+
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	 
 	// Check connection
@@ -24,13 +25,18 @@ if(isset($_POST['Submit'])){
 $sql = "SELECT * from Users where UserName ='$UserName' and Password='$Password'";
 $result = mysqli_query($conn, $sql);
 	if ($row = mysqli_fetch_array($result)) {
+		
 	  $_SESSION['ID'] = $row[6];
       $_SESSION["UserName"] = $row[0];
       $_SESSION["Password"] = $row[1];
+	  $_SESSION['FName'] = $row[2];
+	  $_SESSION['LName'] = $row[3];
       ?>
       <div class= "success">
      Successfully!
+
      <?php
+	 
 	 header("Location:../summerweb/restaurants.php");
   }
   else {

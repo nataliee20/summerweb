@@ -870,6 +870,8 @@ echo'   <div class="topnav">
  <a href="http://localhost/summerweb/login.php">Login</a>
   <a href="http://localhost/summerweb/restaurants.php">Shops</a>
   <a href="http://localhost/summerweb/manageproducts.php">admin</a>
+  <a href="http://localhost/summerweb/logout.php">Logout</a>
+  <a href="http://localhost/summerweb/profile.php">Profile</a>
 </div>';
 }
 ?>
