@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <style>
 *{   
   
@@ -139,7 +142,7 @@ body {
 <body>
 <?php
 
-if(isset($_SESSION['ID'])) 
+if(!isset($_SESSION['ID'])) 
 {
 include("nav-bar.php");
 }
@@ -150,8 +153,6 @@ echo'   <div class="topnav">
 <a href="http://localhost/summerweb/home.php">Home</a>
 <a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
  <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
- <a href="http://localhost/summerweb/signup.php">Sign Up</a>
- <a href="http://localhost/summerweb/login.php">Login</a>
   <a href="http://localhost/summerweb/restaurants.php">Shops</a>
 </div>';
 }

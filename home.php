@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <style>
 
 *,
@@ -890,26 +892,25 @@ body {
 </head>
 <body>
 <?php
-
-if(isset($_SESSION['ID'])) 
+//Session not set
+if(!isset($_SESSION['ID'])) 
 {
 include("nav-bar.php");
 }
+//Session is set
 else
 {
+$name =  $_SESSION['UserName'];
 
 echo'   <div class="topnav">
 <a href="http://localhost/summerweb/home.php">Home</a>
 <a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
  <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
- <a href="http://localhost/summerweb/signup.php">Sign Up</a>
- <a href="http://localhost/summerweb/login.php">Login</a>
   <a href="http://localhost/summerweb/restaurants.php">Shops</a>
-  <a href="http://localhost/summerweb/manageproducts.php">admin</a>
  
  <div class="dropdown">
 
-     <button class="dropbtn">   name  </button>
+     <button class="dropbtn">   '.$name.' </button>
      <div class="dropdown-content">
       <a href="http://localhost/summerweb/profile.php">profile</a>
       <a href="http://localhost/summerweb/logout.php">logout</a>

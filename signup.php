@@ -35,7 +35,12 @@ if(isset($_POST['Submit'])){
 		Record inserted successfully!
 		</div>
 	    <?php
-	} 
+		
+		
+	 
+		header("Location:../summerweb/login.php");
+	 }
+	
 	else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -318,7 +323,9 @@ echo'   <div class="topnav">
 
     		<!---Submit Button------>
     		<div class="box" style="background: #2d3e3f">
-    				<input type="Submit" name="Submit" class="submit" value="SUBMIT">
+			<a href="http://localhost/summerweb/login.php/">
+    				<input type="Submit" name="Submit" class="submit" value="SUBMIT"> </a>
+
     		</div>
     		<!---Submit Button----->
       </form>

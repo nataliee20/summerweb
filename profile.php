@@ -1,13 +1,15 @@
-
+<?php
+session_start();
+?>
 <html>
 
 <style>
    body {
-    background-color: #f9f9fa
+    background-color: #f9f9fa;
 }
 
 .padding {
-    padding: 3rem !important
+    padding: 3rem !important;
 }
 
 .user-card-full {
@@ -173,34 +175,111 @@ p {
 
 }
 
+
+/* //dropdown */
+<style>
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+   /* position: relative;  */
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
  
 </style>
 <?php
 
-
-if(isset($_SESSION['ID'])) 
+//Session not set
+if(!isset($_SESSION['ID'])) 
 {
 include("nav-bar.php");
 }
+//Session is set
 else
 {
+$name =  $_SESSION['UserName'];
 
 echo'   <div class="topnav">
 <a href="http://localhost/summerweb/home.php">Home</a>
 <a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
  <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
   <a href="http://localhost/summerweb/restaurants.php">Shops</a>
+ 
+ <div class="dropdown">
+
+     <button class="dropbtn">   '.$name.' </button>
+     <div class="dropdown-content">
+      <a href="http://localhost/summerweb/profile.php">profile</a>
+      <a href="http://localhost/summerweb/logout.php">logout</a>
+    </div>
+  </div>
+  
 </div>';
 }
 
-session_start();
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "webproject";
 
 
+
+// Create connection
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+$sql="SELECT * from users";
+$result = mysqli_query($conn,$sql);
+
+while($row=mysqli_fetch_array($result))
+{
+       
+       $UserName=$row[0];
+       $Password=$row[1];
+       $FName=$row[2];
+       $LName=$row[3];
+       $Email=$row[4];
+       $Age=$row[5];
+       $UserID=$row[6];
+}    
+
+?> <center><h2>
+    <?php
+echo '<span><a class="actions"href = "editUser.php?ID='.$row[6].'">Edit User</a></span>';
 ?>
+</center></h2>
+
+
+
 <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
@@ -258,35 +337,11 @@ $dbname = "webproject";
                                                 </div>
                                             </div>
                                            
-                                              <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "webproject";
-
-// Create connection
-$conn = mysqli_connect($servername,$username,$password,$dbname);
-$sql="SELECT * from users";
-$result = mysqli_query($conn,$sql);
-
-while($row=mysqli_fetch_array($result))
-{
-       
-       $UserName=$row[0];
-       $Password=$row[1];
-       $FName=$row[2];
-       $LName=$row[3];
-       $Email=$row[4];
-       $Age=$row[5];
-       $UserID=$row[6];
-      
-
-       ?>
-                                              <td><span><a class="actions"href = "editUser.php?ID=<?php echo $row[6]; ?>">Edit User</a></span></td>
+                                              
                                         
 
-<?php } ?>
+
 
                                             
 

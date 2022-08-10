@@ -31,6 +31,8 @@ $result = mysqli_query($conn, $sql);
       $_SESSION["Password"] = $row[1];
 	  $_SESSION['FName'] = $row[2];
 	  $_SESSION['LName'] = $row[3];
+	  $_SESSION['Email'] = $row[4];
+	  echo $_SESSION['ID'];
       ?>
       <div class= "success">
      Successfully!

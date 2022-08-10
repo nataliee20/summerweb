@@ -76,7 +76,7 @@ echo'   <div class="topnav">
 </div>
 
 <div style="width: 300px; float:left; height:300px; background:white; margin:10px;text-align:center;">
-	<a href="http://localhost/summerweb/Mdessert.php/">
+	<a href="http://localhost/summerweb/Mdrinks.php/">
 <h3>Drink<div class="product-image"><img src="http://localhost/summerweb/images/cola.jpg" style="height:120px  ">
 </div></h3>
 </div>
