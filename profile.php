@@ -283,7 +283,7 @@ while($row=mysqli_fetch_array($result))
       
 
        ?>
-                                              <td><span><a class="actions"href = "editUser.php?X=<?php echo $row[6]; ?>">Edit User</a></span></td>
+                                              <td><span><a class="actions"href = "editUser.php?ID=<?php echo $row[6]; ?>">Edit User</a></span></td>
                                         
 
 <?php } ?>

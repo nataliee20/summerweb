@@ -52,7 +52,7 @@ session_start();
               
        // Create connection
        $conn = mysqli_connect($servername,$username,$password,$dbname);
-       $sql="select * from users where UserID = '".$_GET['X']."'"; //select kol el rows
+       $sql="select * from users where UserID = '".$_GET['ID']."'"; //select kol el rows
        $result = mysqli_query($conn,$sql);	
   
 	while($row=mysqli_fetch_array($result))	
@@ -113,7 +113,7 @@ $conn = new mysqli($servername, $user, $password, $database);
 
 if(isset($_POST['submit'])){ 
 	echo $_POST['username'];
-	$sql="UPDATE users SET UserName='".$_POST['username']."' WHERE UserID = '".$_GET['X']."'";
+	$sql="UPDATE users SET UserName='".$_POST['username']."' WHERE UserID = '".$_GET['ID']."'";
 
 	
 //"update products set Name ='".$_POST['productname']."', Description = '".$_POST['description']."', Price = '".$_POST['price']."', where ProductID = '".$_GET['X']."'";
