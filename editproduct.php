@@ -57,14 +57,14 @@ session_start();
   
 	while($row=mysqli_fetch_array($result))	
 	{
-              $Name=$row[0];
-              $Description=$row[1];
-              $Price=$row[2];
-              $ProductID=$row[3];
-              $CatID=$row[4];
-              $SubCatID=$row[5];
-              $img=$row[6];
-              $Quantity=$row[7];
+		$Name=$row['Name'];
+		$Description=$row['Description'];
+		$Price=$row['Price'];
+		$ProductID=$row['productID'];
+		$CatID=$row['catID'];
+		$ShopID=$row['shopID'];
+		$img=$row['Image'];
+		$Quantity = $row['quantity'];
     }
 ?>
 

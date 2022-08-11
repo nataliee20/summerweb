@@ -1,84 +1,83 @@
 <?php
 session_start();
 ?>
-<style>
-     /*nav*/
-body {
-   background-color: #FF7518;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #FF7518;
-  color: white;
-}
-.shops{
- font-weight:bold ;
-
-}
-
-/* //dropdown */
-<style>
-.h2 {
-  background-color: white;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-.dropdown {
-   /* position: relative;  */
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: white;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
-
- 
-</style>
 <!DOCTYPE html>
 <html>
+
+<style>
+     /*nav*/
+  body {
+    background-color: #FF7518;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #FF7518;
+    color: white;
+  }
+  .shops{
+  font-weight:bold ;
+
+  }
+
+  /* //dropdown */
+
+  .h2 {
+    background-color: white;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    /* position: relative;  */
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: white;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
 
 <title>restaurants</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -117,41 +116,34 @@ echo'   <div class="topnav">
 
 <h1 style="text-align:center; font-weight: bold;">Shops</h1>
 
-<div class="w3-bar w3-white" style="height:150px; width:1000px;">
-  <div class="w3-bar-item">Mcdonald's</div>
-  <a href="http://localhost/summerweb/mac.php/">
-  <div class="product-image"><img src="http://localhost/summerweb/images/macc.png" style="height:120px; padding:20px;">
+<?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "webproject";
+  
+  
+  // Create connection
+  $conn = mysqli_connect($servername,$username,$password,$dbname);
 
-    <h8 style=" text-align: top; text-align: left;"> fast food restaurant online delivery available 24/7  </h8>
+  $sql="SELECT * from shop;";
+  $result = mysqli_query($conn, $sql);
+  while($row = mysqli_fetch_array($result))
+  {
+?>
+<div class="w3-bar w3-white" style="height:150px; width:1000px;">
+  <div class="w3-bar-item"><?php echo $row['Name']; ?></div>
+  <div class="product-image">
+    <a href="http://localhost/summerweb/cat.php?id=<?php echo $row['ShopID']; ?>">
+      <img src="http://localhost<?php echo $row['Logo']; ?>" style="height:120px; padding:20px;">
+      <h8 style=" text-align: top; text-align: left;"> <?php echo $row['Description']; ?>  </h8>
     </a>
   </div>
-  
 </div>
-<br>
-<div class="w3-bar w3-white" style="height:150px; width:1000px;">
-  <div class="w3-bar-item">KFC</div>
-  <a href="http://localhost/summerweb/kfc.php/">
-  <div class="product-image"><img src="http://localhost/summerweb/images/kfc.jpg" style="height:120px; padding:20px; ">
-    <h8 style=" text-align: top; text-align: left;"> fast food restaurant online delivery available 24/7  </h8>
-  </a></div>
-</div>
-<br>
-<div class="w3-bar w3-white" style="height:150px; width:1000px;">
-  <div class="w3-bar-item">Wimpy</div>
-  <a href="http://localhost/summerweb/wimpy.php/">
-  <div class="product-image"><img src="http://localhost/summerweb/images/wimpy.png" style="height:120px; padding:20px;">
-    <h8 style=" text-align: top; text-align: left;"> fast food restaurant online delivery available 24/7  </h8>
-  </a></div>
-</div>
+<?php } ?>
 
-<br>
-<div class="w3-bar w3-white" style="height:150px; width:1000px;">
-  <div class="w3-bar-item">Grocery</div>
-  <a href="http://localhost/summerweb/grocery.php/">
-  <div class="product-image"><img src="http://localhost/summerweb/images/grocery.jpg" style="height:120px; padding:20px;">
-    <h8 style=" text-align: top; text-align: left;"> you can order all your home groceries  </h8>
-  </a></div>
-</div>
+
+
 </body>
 </html>
                     

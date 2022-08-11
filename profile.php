@@ -252,12 +252,12 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "webproject";
-
+$UserID='0';
 
 
 // Create connection
 $conn = mysqli_connect($servername,$username,$password,$dbname);
-$sql="SELECT * from users";
+$sql="SELECT * from users where UserID = ". $_SESSION['ID'];
 $result = mysqli_query($conn,$sql);
 
 while($row=mysqli_fetch_array($result))
@@ -274,7 +274,7 @@ while($row=mysqli_fetch_array($result))
 
 ?> <center><h2>
     <?php
-echo '<span><a class="actions"href = "editUser.php?ID='.$row[6].'">Edit User</a></span>';
+echo '<span><a class="actions"href = "editUser.php?x='.$UserID.'">Edit User</a></span>';
 ?>
 </center></h2>
 

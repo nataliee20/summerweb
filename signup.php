@@ -37,7 +37,7 @@ if(isset($_POST['Submit'])){
 	    <?php
 		
 		
-	 
+	
 		header("Location:../summerweb/login.php");
 	 }
 	

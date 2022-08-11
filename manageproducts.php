@@ -66,12 +66,12 @@ h5{
     <div class="col-lg">
   <table id="mytable">
     <tr>
+      <th>Product ID</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
-      <th>Product ID</th>
+      <th>Shop ID</th>
       <th>Category ID</th>
-      <th>SubCategory ID</th>
       <th>Image</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -96,20 +96,20 @@ h5{
 	while($row=mysqli_fetch_array($result))
 	{
               
-              $Name=$row[0];
-              $Description=$row[1];
-              $Price=$row[2];
-              $ProductID=$row[3];
-              $CatID=$row[4];
-              $SubCatID=$row[5];
-              $img=$row[6];
+              $Name=$row['Name'];
+              $Description=$row['Description'];
+              $Price=$row['Price'];
+              $ProductID=$row['productID'];
+              $CatID=$row['catID'];
+              $ShopID=$row['shopID'];
+              $img=$row['Image'];
               echo"<tr>";
+              echo" <td>$ProductID</td>";
               echo" <td>$Name</td>";
               echo" <td>$Description</td>";
               echo" <td>$Price</td>";
-              echo" <td>$ProductID</td>";
+              echo" <td>$ShopID</td>";
               echo" <td>$CatID</td>";
-              echo" <td>$SubCatID</td>";
               echo" <td>$img</td>";
 
               ?>

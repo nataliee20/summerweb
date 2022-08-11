@@ -154,11 +154,11 @@ echo'   <div class="topnav">
               
        // Create connection
        $conn = mysqli_connect($servername,$username,$password,$dbname);
-       $sql="select * from users where UserID = '".$_GET['ID']."'"; //select kol el rows
+       $sql="select * from users where UserID = '".$_GET['x']."'"; //select kol el rows
        $result = mysqli_query($conn,$sql);	
   
-	while($row=mysqli_fetch_array($result))	
-	{
+      while($row=mysqli_fetch_array($result))	
+      {
         $UserName=$row[0];
         $Password=$row[1];
         $FName=$row[2];
@@ -166,7 +166,7 @@ echo'   <div class="topnav">
         $Email=$row[4];
         $Age=$row[5];
         $UserID=$row[6];
-    }
+      }
 ?>
 
 <html>
@@ -188,33 +188,33 @@ echo'   <div class="topnav">
 
 		<div class="form-group">
             <label for="productname">UserName</label>
-            <input type="text" class="form-control" id="username" value="<?php  $UserName;?>" name="username">
+            <input type="text" class="form-control" id="username" value="<?php echo  $UserName;?>" name="username">
 		</div>
 
 		<div class="form-group">
             <label for="productname">Password</label>
-            <input type="text" class="form-control" id="password" value="<?php  $Password;?>" name="password">
+            <input type="text" class="form-control" id="password" value="<?php echo $Password;?>" name="password">
 		</div>
 		
 		<div class="form-group">
             <label for="productname">First name</label>
-            <input type="text" class="form-control" id="fname" value="<?php  $FName;?>" name="fname">
+            <input type="text" class="form-control" id="fname" value="<?php   echo $FName;?>" name="fname">
 		</div>
 
 		<div class="form-group">
             <label for="productname">Last name</label>
-            <input type="text" class="form-control" id="lname" value="<?php  $LName;?>" name="lname">
+            <input type="text" class="form-control" id="lname" value="<?php   echo $LName;?>" name="lname">
 		</div>
 
 		<div class="form-group">
             <label for="productname">Email</label>
-            <input type="text" class="form-control" id="email" value="<?php  $Email;?>" name="email">
+            <input type="text" class="form-control" id="email" value="<?php echo   $Email;?>" name="email">
 		</div>
 
 
 
 
-<button type="submit" value="submit" name="submit" class="btn ">Submit</button>
+<input type="submit" value="submit" name="submit" class="btn ">
 
 
 	</form>
@@ -237,8 +237,8 @@ if(isset($_POST['submit'])){
 	echo $_POST['fname'];
 	echo $_POST['lname'];
 	echo $_POST['email'];
-	$sql="UPDATE users SET UserName='".$_POST['username']."',FName='".$_POST['FName']."',LName='".$_POST['LName']."',Email='".$_POST['Email']."', Password='".$_POST['Password']."' WHERE UserID = '".$_GET['ID']."'";
-
+	$sql="UPDATE users SET UserName='".$_POST['username']."',FName='".$_POST['fname']."',LName='".$_POST['lname']."',Email='".$_POST['email']."', Password='".$_POST['password']."' WHERE UserID = '".$_GET['x']."'";
+	
 	
 //"update products set Name ='".$_POST['productname']."', Description = '".$_POST['description']."', Price = '".$_POST['price']."', where ProductID = '".$_GET['X']."'";
 
