@@ -86,7 +86,42 @@
             background-color: #FF7518;
             color: white;
             }
+             /* //dropdown */
 
+  .h2 {
+    background-color: white;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    /* position: relative;  */
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: white;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
         </style>
 <body>
@@ -107,7 +142,7 @@ echo'   <div class="topnav">
 </div>';
 }
 ?>
-        <h2 style="text-align:center; font-weight: bold;">Main Course</h2>
+        <!-- <h2 style="text-align:center; font-weight: bold;">Main Course</h2> -->
         <div id="product-grid" style="display: flex;flex-wrap: wrap;justify-content: center;">
 
         <?php
@@ -119,6 +154,8 @@ echo'   <div class="topnav">
             
             // Create connection
             $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+
 
             $shopID = $_GET['shopId'];
             $catID = $_GET['catId'];
@@ -134,14 +171,18 @@ echo'   <div class="topnav">
                         <div class="product-image">
                             <img src="http://localhost/summerweb/images/<?php echo $row['Image']; ?>">
                         </div>
+                        <div class="product-description"> <?php echo $row['Description']; ?></div>
                         <div class="product-price">price: <?php echo $row['Price']; ?> LE</div>
                         <div class="product-price">Qty: </div>
                         <div>
                             <input type="hidden" name="product_id" value="<?php echo $row['productID']; ?>"/>
-                            <input type="hidden" name="ProductsQty"
-                                   value='quantity'/>
+                            <input type="hidden" name="ProductsQty" value='quantity'/>
+
+                            <input type="hidden" name="hidden_name" value="<?php echo $row["productID"]; ?>" />
+						    <input type="hidden" name="hidden_price" value="<?php echo $row["Price"]; ?>" />
+
                             <input type="number" name="quantity" value="1" size="2"/>
-                            <input type="submit" value="Add to cart" class="btnAddAction"/>
+                            <input type="submit" name= "add_to_cart" value="Add to cart" class="btnAddAction"/>
                         </div>
                     </form>
                 </div>

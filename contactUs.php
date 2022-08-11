@@ -138,36 +138,42 @@ body {
   color: white;
 }
 
-/*nav*/
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* //dropdown */
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+.h2 {
+    background-color: white;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  .dropdown {
+    /* position: relative;  */
+    display: inline-block;
+  }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
 
-.topnav a.active {
-  background-color: #FF7518;
-  color: white;
-}
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
 
+  .dropdown-content a:hover {background-color: white;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
         </style>
 
@@ -189,14 +195,26 @@ if(!isset($_SESSION['ID']))
 {
 include("nav-bar.php");
 }
+//Session is set
 else
 {
+$name =  $_SESSION['UserName'];
 
 echo'   <div class="topnav">
 <a href="http://localhost/summerweb/home.php">Home</a>
 <a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
  <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
   <a href="http://localhost/summerweb/restaurants.php">Shops</a>
+ 
+ <div class="dropdown">
+
+     <button class="dropbtn">   '.$name.'  </button>
+     <div class="dropdown-content">
+      <a href="http://localhost/summerweb/profile.php">profile</a>
+      <a href="http://localhost/summerweb/logout.php">logout</a>
+    </div>
+  </div>
+  
 </div>';
 }
 ?>

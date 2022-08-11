@@ -36,6 +36,42 @@
         left: 43.7%; 
         transform: translate(-50%, -40%);
     }
+     /* //dropdown */
+
+  .h2 {
+    background-color: white;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    /* position: relative;  */
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: white;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
   </style>
 <body>
 <?php
@@ -74,7 +110,7 @@ echo'   <div class="topnav">
     while($row = mysqli_fetch_array($result))
     {
   ?>
-    <div style="width: 300px; float:left; height:300px; background:white; margin:10px; text-align:center;">
+    <div style="width: 300px; float:left; height:300px; background:white; margin:10px; text-align:center;justify-content: center;">
 		  <a href="http://localhost/summerweb/products.php?shopId=<?php echo $shopID; ?>&catId=<?php echo $row['catID']; ?>">
         <h3><?php echo $row['Name']; ?>
           <div class="product-image">

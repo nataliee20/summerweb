@@ -102,7 +102,7 @@ echo'   <div class="topnav">
  
  <div class="dropdown">
 
-     <h2 class="dropbtn">   '.$name.'  </h2>
+     <button class="dropbtn">   '.$name.'  </button>
      <div class="dropdown-content">
       <a href="http://localhost/summerweb/profile.php">profile</a>
       <a href="http://localhost/summerweb/logout.php">logout</a>

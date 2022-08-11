@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("products.php");
 ?>
 <style>
     html {
@@ -340,6 +341,56 @@ echo'   <div class="topnav">
   
 </div>';
 }
+
+if(isset($_POST["Add_to_cart"]))
+{
+    if(isset($_SESSION["shopping_cart"]))
+    {
+        $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
+        if(!in_array($_GET["item_id"], $item_array_id))
+        {
+            $count = count($_SESSION["shopping_cart"]);
+            $item_array = array(
+                'item_id'			=>	$_GET["productID"],
+                'item_name'			=>	$_POST["hidden_name"],
+                'item_price'		=>	$_POST["hidden_price"],
+                'item_quantity'		=>	$_POST["quantity"]
+            );
+            $_SESSION["shopping_cart"][$count] = $item_array;
+        }
+        else
+        {
+            echo '<script>alert("Item Already Added")</script>';
+        }
+    }
+    else
+    {
+        $item_array = array(
+            'item_id'			=>	$_GET["productID"],
+            'item_name'			=>	$_POST["hidden_name"],
+            'item_price'		=>	$_POST["hidden_price"],
+            'item_quantity'		=>	$_POST["quantity"]
+        );
+        $_SESSION["shopping_cart"][0] = $item_array;
+    }
+
+}
+
+if(isset($_GET["action"]))
+{
+	if($_GET["action"] == "delete")
+	{
+		foreach($_SESSION["shopping_cart"] as $keys => $values)
+		{
+			if($values["item_id"] == $_GET["productID"])
+			{
+				unset($_SESSION["shopping_cart"][$keys]);
+				echo '<script>alert("Item Removed")</script>';
+				echo '<script>window.location="cart.php"</script>';
+			}
+		}
+	}
+}
 ?>
 
 <html>
@@ -366,36 +417,58 @@ echo'   <div class="topnav">
         </div>
         <div class="col col-qty align-center">QTY</div>
         <div class="col">Total</div>
+        <div class="col ">remove</div>
       </div>
-      
+
+
+    <?php
+    if(!empty($_SESSION["shopping_cart"]))
+		{
+						$total = 0;
+						foreach($_SESSION["shopping_cart"] as $keys => $values)
+						{
+		?>
+
+
+          
       <div class="layout-inline row">
         
         <div class="col col-pro layout-inline">
-            
+        <?php echo $values["item_name"]; ?>
         </div>
         
         <div class="col col-price col-numeric align-center ">
-          
+        <?php echo $values["item_price"]; ?>
         </div>
 
         <div class="col col-qty layout-inline">
-
+        <?php echo $values["item_quantity"]; ?>
         </div>
         
         <div class="col col-total col-numeric"> 
-                        
+        <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?>           
+        </div>
+
+        <div class="col col-total col-numeric"> 
+        <a href="cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a>           
         </div>
       </div>
-      
   
        <div class="tf">
           <div class="row layout-inline">
            <div class="col">
              <p>Total</p>
+             <?php
+							$total = $total + ($values["item_quantity"] * $values["item_price"]);
+						}
+					?>
            </div>
            <div class="col"></div>
          </div>
-       </div>         
+       </div>  
+       <?php 
+     }
+        ?>       
   </div>
     
     <a href="#" class="btn btn-update">Checkout</a>
