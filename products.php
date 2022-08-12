@@ -166,7 +166,7 @@ echo'   <div class="topnav">
         ?>
             <div style=" float:right; margin:10px">
                 <div class="product-item cards" width="200px">
-                    <form method="post" action="Products">
+                    <form method="post" action="cart.php">
                         <div class="mt-2 f-16"><strong><?php echo $row['Name']; ?></strong></div>
                         <div class="product-image">
                             <img src="http://localhost/summerweb/images/<?php echo $row['Image']; ?>">
@@ -178,7 +178,7 @@ echo'   <div class="topnav">
                             <input type="hidden" name="product_id" value="<?php echo $row['productID']; ?>"/>
                             <input type="hidden" name="ProductsQty" value='quantity'/>
 
-                            <input type="hidden" name="hidden_name" value="<?php echo $row["productID"]; ?>" />
+                            <input type="hidden" name="hidden_name" value="<?php echo $row["Name"]; ?>" />
 						    <input type="hidden" name="hidden_price" value="<?php echo $row["Price"]; ?>" />
 
                             <input type="number" name="quantity" value="1" size="2"/>

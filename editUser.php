@@ -208,7 +208,7 @@ echo'   <div class="topnav">
 
 		<div class="form-group">
             <label for="productname">Email</label>
-            <input type="text" class="form-control" id="email" value="<?php echo   $Email;?>" name="email">
+            <input type="text" class="form-control" id="email" value="<?php echo  $Email;?>" name="email">
 		</div>
 
 
@@ -232,11 +232,11 @@ $database="webproject";
 $conn = new mysqli($servername, $user, $password, $database);
 
 if(isset($_POST['submit'])){ 
-	echo $_POST['username'];
-	echo $_POST['password'];
-	echo $_POST['fname'];
-	echo $_POST['lname'];
-	echo $_POST['email'];
+	// echo $_POST['username'];
+	// echo $_POST['password'];
+	// echo $_POST['fname'];
+	// echo $_POST['lname'];
+	// echo $_POST['email'];
 	$sql="UPDATE users SET UserName='".$_POST['username']."',FName='".$_POST['fname']."',LName='".$_POST['lname']."',Email='".$_POST['email']."', Password='".$_POST['password']."' WHERE UserID = '".$_GET['x']."'";
 	
 	

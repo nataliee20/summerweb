@@ -342,7 +342,7 @@ echo'   <div class="topnav">
 </div>';
 }
 
-if(isset($_POST["Add_to_cart"]))
+if(isset($_POST["add_to_cart"]))
 {
     if(isset($_SESSION["shopping_cart"]))
     {
@@ -400,7 +400,7 @@ if(isset($_GET["action"]))
       <span class="shopper"></span> Shopping Cart
     </h1>
     
-    <a href="#" class="visibility-cart transition is-open">X</a>    
+    <!-- <a href="#" class="visibility-cart transition is-open">X</a>     -->
   </div>
   
   <div class="cart transition is-open">
@@ -458,8 +458,9 @@ if(isset($_GET["action"]))
           <div class="row layout-inline">
            <div class="col">
              <p>Total</p>
+           <!-- <p style=" align:right"> -->
              <?php
-							$total = $total + ($values["item_quantity"] * $values["item_price"]);
+						  echo number_format($values["item_quantity"] * $values["item_price"], 2);
 						}
 					?>
            </div>
