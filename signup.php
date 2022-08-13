@@ -27,7 +27,7 @@ if(isset($_POST['Submit'])){
 
 
 	 
-	$sql  = "INSERT INTO users (UserName, Password, FName, LName, Email,address) VALUES
+	$sql  = "INSERT INTO users (UserName, Password, FName, LName, Email, address) VALUES
 	('$uname', '$pass', '$fn', '$ln', '$email','$address')";
 	 
 	if ($conn->query($sql) === TRUE) {

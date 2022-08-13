@@ -1,313 +1,313 @@
 <?php
 session_start();
-include("products.php");
+
 ?>
 <style>
     html {
-  background: #bbc3c6;
-  font: 62.5%/1.5em "Trebuchet Ms", helvetica;
-}
+      background: #bbc3c6;
+      font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+    }
 
-* {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-}
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+    }
 
-@font-face {
-    font-family: 'Shopper';
-    src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
-}
+    @font-face {
+        font-family: 'Shopper';
+        src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
+    }
 
-.shopper {
-  text-transform: lowercase;
-  font: 2em 'Shopper', sans-serif;
-  line-height: 0.5em;
-  display: inline-block;
-}
-
-
-
-h1 {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 2.5em;
-}
-
-p {
-  font-size: 1.5em;
-  color: #8a8a8a;
-}
-
-input {
-  border: 0.3em solid #bbc3c6;
-  padding: 0.5em 0.3em; 
-  font-size: 1.4em;
-  color: #8a8a8a;
-  text-align: center;
-}
+    .shopper {
+      text-transform: lowercase;
+      font: 2em 'Shopper', sans-serif;
+      line-height: 0.5em;
+      display: inline-block;
+    }
 
 
-a {
-  text-decoration: none;
-}
 
-.container {
-  max-width: 75em;
-  width: 95%;
-  margin: 40px auto;  
-  overflow: hidden;
-  position: relative;
-  
-  border-radius: 0.6em;
-  background: #ecf0f1;
-  box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
-}
+    h1 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.5em;
+    }
 
-.heading {
-  padding: 1em;
-  position: relative;
-  z-index: 1;
-  color: #f7f7f7;
-  background: #FF7518;
-}
+    p {
+      font-size: 1.5em;
+      color: #8a8a8a;
+    }
 
-.cart {
-  margin: 2.5em;
-  overflow: hidden;
-}
-
-.cart.is-closed {
-  height: 0;
-  margin-top: -2.5em;
-}
-
-.table {
-  background: #ffffff;
-  border-radius: 0.6em;
-  overflow: hidden;
-  clear: both;
-  margin-bottom: 1.8em;
-}
+    input {
+      border: 0.3em solid #bbc3c6;
+      padding: 0.5em 0.3em; 
+      font-size: 1.4em;
+      color: #8a8a8a;
+      text-align: center;
+    }
 
 
-.layout-inline > * {
-  display: inline-block;
-}
+    a {
+      text-decoration: none;
+    }
 
-.align-center {
-  text-align: center;
-}
+    .container {
+      max-width: 75em;
+      width: 95%;
+      margin: 40px auto;  
+      overflow: hidden;
+      position: relative;
+      
+      border-radius: 0.6em;
+      background: #ecf0f1;
+      box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+    }
 
-.th {
-  background: #FF7518;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.5em;
-}
+    .heading {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+      color: #f7f7f7;
+      background: #FF7518;
+    }
 
-.tf {
-  background: #FF7518;
-  text-transform: uppercase;
-  text-align: right;
-  font-size: 1.2em;  
-}
+    .cart {
+      margin: 2.5em;
+      overflow: hidden;
+    }
 
-.tf p {
-  color: #fff;
-  font-weight: bold;
-}
+    .cart.is-closed {
+      height: 0;
+      margin-top: -2.5em;
+    }
 
-.col {
-  padding: 1em;
-  width: 12%;
-}
-
-.col-pro {
-  width: 44%;
-}
-
-.col-pro > * {
-  vertical-align: middle;
-}
-
-.col-qty {
-  text-align: center;
-  width: 17%;
-}
-
-.col-numeric p {
-  font: bold 1.8em helvetica;
-}
-
-.col-total p {
-  color: #12c8b1;
-}
-
-.tf .col {
-  width: 20%;
-}
-
-.row > div {
-  vertical-align: middle;
-}
-
-.row-bg2 {
-  background: #f7f7f7;
-}
-
-.visibility-cart {
-  position: absolute;
-  color: #fff;
-  top: 0.5em;
-  right: 0.5em;
-  font:  bold 2em arial;
-  border: 0.16em solid #fff;
-  border-radius: 2.5em;
-  padding: 0 0.22em 0 0.25em ;
-}
-
-.col-qty > * {
-  vertical-align: middle; 
-}
-
-.col-qty > input {
-  max-width: 2.6em;
-}
+    .table {
+      background: #ffffff;
+      border-radius: 0.6em;
+      overflow: hidden;
+      clear: both;
+      margin-bottom: 1.8em;
+    }
 
 
-a.qty {
-  width: 1em;
-  line-height: 1em;
-  border-radius: 2em;
-  font-size: 2.5em;
-  font-weight: bold;
-  text-align: center;
-  background: grey;  
-  color: #fff;
-}
+    .layout-inline > * {
+      display: inline-block;
+    }
 
-a.qty:hover {
-  background: black;
-}
+    .align-center {
+      text-align: center;
+    }
 
-.btn {
-  padding: 10px 30px;
-  border-radius: 0.3em;
-  font-size: 1.4em;
-  font-weight: bold;
-  background: grey;
-  color: #fff;
-}
+    .th {
+      background: #FF7518;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
 
-.btn:hover {
-  box-shadow: 0 3px 0 rgba(0,0,0, 0)
-}
+    .tf {
+      background: #FF7518;
+      text-transform: uppercase;
+      text-align: right;
+      font-size: 1.2em;  
+    }
 
-.btn-update {
-  float: right;
-  margin: 0 0 1.5em 0;
-}
+    .tf p {
+      color: #fff;
+      font-weight: bold;
+    }
 
-.transition {
-  transition: all 0.3s ease-in-out;
-}
+    .col {
+      padding: 1em;
+      width: 12%;
+    }
 
-@media screen and ( max-width: 755px) {
-  .container {
-    width: 98%;
-  }
-  
-  .col-pro {
-    width: 35%;
-  }
-  
-  .col-qty {
-    width: 22%;
-  }
-  
-  img {
-    max-width: 100%;
-    margin-bottom: 1em;
-  }
+    .col-pro {
+      width: 44%;
+    }
 
-}
+    .col-pro > * {
+      vertical-align: middle;
+    }
 
-@media screen and ( max-width: 591px) {
-  
-}
- /*nav*/
- body {
-   
-   margin: 0;
-   font-family: Arial, Helvetica, sans-serif;
- }
- 
- .topnav {
-   overflow: hidden;
-   background-color: #333;
- }
- 
- .topnav a {
-   float: left;
-   color: #f2f2f2;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
-   font-size: 17px;
- }
- 
- .topnav a:hover {
-   background-color: #ddd;
-   color: black;
- }
- 
- .topnav a.active {
-   background-color: #FF7518;
-   color: white;
- }
- .shops{
-  font-weight:bold ;
- 
- }
- 
- 
- /* //dropdown */
- .dropbtn {
-   background-color: #04AA6D;
-   color: white;
-   padding: 16px;
-   font-size: 16px;
-   border: none;
- }
- 
- .dropdown {
-    /* position: relative;  */
-   display: inline-block;
- }
- 
- .dropdown-content {
-   display: none;
-   position: absolute;
-   background-color: #f1f1f1;
-   min-width: 160px;
-   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   z-index: 1;
- }
- 
- .dropdown-content a {
-   color: black;
-   padding: 12px 16px;
-   text-decoration: none;
-   display: block;
- }
- 
- .dropdown-content a:hover {background-color: #ddd;}
- 
- .dropdown:hover .dropdown-content {display: block;}
- 
- .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    .col-qty {
+      text-align: center;
+      width: 17%;
+    }
+
+    .col-numeric p {
+      font: bold 1.8em helvetica;
+    }
+
+    .col-total p {
+      color: #12c8b1;
+    }
+
+    .tf .col {
+      width: 20%;
+    }
+
+    .row > div {
+      vertical-align: middle;
+    }
+
+    .row-bg2 {
+      background: #f7f7f7;
+    }
+
+    .visibility-cart {
+      position: absolute;
+      color: #fff;
+      top: 0.5em;
+      right: 0.5em;
+      font:  bold 2em arial;
+      border: 0.16em solid #fff;
+      border-radius: 2.5em;
+      padding: 0 0.22em 0 0.25em ;
+    }
+
+    .col-qty > * {
+      vertical-align: middle; 
+    }
+
+    .col-qty > input {
+      max-width: 2.6em;
+    }
+
+
+    a.qty {
+      width: 1em;
+      line-height: 1em;
+      border-radius: 2em;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-align: center;
+      background: grey;  
+      color: #fff;
+    }
+
+    a.qty:hover {
+      background: black;
+    }
+
+    .btn {
+      padding: 10px 30px;
+      border-radius: 0.3em;
+      font-size: 1.4em;
+      font-weight: bold;
+      background: grey;
+      color: #fff;
+    }
+
+    .btn:hover {
+      box-shadow: 0 3px 0 rgba(0,0,0, 0)
+    }
+
+    .btn-update {
+      float: right;
+      margin: 0 0 1.5em 0;
+    }
+
+    .transition {
+      transition: all 0.3s ease-in-out;
+    }
+
+    @media screen and ( max-width: 755px) {
+      .container {
+        width: 98%;
+      }
+      
+      .col-pro {
+        width: 35%;
+      }
+      
+      .col-qty {
+        width: 22%;
+      }
+      
+      img {
+        max-width: 100%;
+        margin-bottom: 1em;
+      }
+
+    }
+
+    @media screen and ( max-width: 591px) {
+      
+    }
+    /*nav*/
+    body {
+      
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #FF7518;
+      color: white;
+    }
+    .shops{
+      font-weight:bold ;
+    
+    }
+    
+    
+    /* //dropdown */
+    .dropbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+    
+    .dropdown {
+        /* position: relative;  */
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
  
 </style>
@@ -322,24 +322,24 @@ include("nav-bar.php");
 //Session is set
 else
 {
-$name =  $_SESSION['UserName'];
+  $name =  $_SESSION['UserName'];
 
-echo'   <div class="topnav">
-<a href="http://localhost/summerweb/home.php">Home</a>
-<a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
- <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
+  echo'   <div class="topnav">
+  <a href="http://localhost/summerweb/home.php">Home</a>
+  <a href="http://localhost/summerweb/contactUs.php">Contact Us</a>
+  <a href="http://localhost/summerweb/aboutUs.php">About Us</a>
   <a href="http://localhost/summerweb/restaurants.php">Shops</a>
- 
- <div class="dropdown">
-
-     <button class="dropbtn">   '.$name.' </button>
-     <div class="dropdown-content">
-      <a href="http://localhost/summerweb/profile.php">profile</a>
-      <a href="http://localhost/summerweb/logout.php">logout</a>
-    </div>
-  </div>
   
-</div>';
+  <div class="dropdown">
+
+      <button class="dropbtn">   '.$name.' </button>
+      <div class="dropdown-content">
+        <a href="http://localhost/summerweb/profile.php">profile</a>
+        <a href="http://localhost/summerweb/logout.php">logout</a>
+      </div>
+    </div>
+    
+  </div>';
 }
 
 if(isset($_POST["add_to_cart"]))
@@ -347,11 +347,11 @@ if(isset($_POST["add_to_cart"]))
     if(isset($_SESSION["shopping_cart"]))
     {
         $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
-        if(!in_array($_GET["item_id"], $item_array_id))
+        if(!in_array($_POST["product_id"], $item_array_id))
         {
             $count = count($_SESSION["shopping_cart"]);
             $item_array = array(
-                'item_id'			=>	$_GET["productID"],
+                'item_id'			=>	$_POST["product_id"],
                 'item_name'			=>	$_POST["hidden_name"],
                 'item_price'		=>	$_POST["hidden_price"],
                 'item_quantity'		=>	$_POST["quantity"]
@@ -366,7 +366,7 @@ if(isset($_POST["add_to_cart"]))
     else
     {
         $item_array = array(
-            'item_id'			=>	$_GET["productID"],
+            'item_id'			=>		$_POST["productID"],
             'item_name'			=>	$_POST["hidden_name"],
             'item_price'		=>	$_POST["hidden_price"],
             'item_quantity'		=>	$_POST["quantity"]
@@ -382,7 +382,7 @@ if(isset($_GET["action"]))
 	{
 		foreach($_SESSION["shopping_cart"] as $keys => $values)
 		{
-			if($values["item_id"] == $_GET["productID"])
+			if($values["product_id"] == $_GET["productID"])
 			{
 				unset($_SESSION["shopping_cart"][$keys]);
 				echo '<script>alert("Item Removed")</script>';
@@ -390,6 +390,13 @@ if(isset($_GET["action"]))
 			}
 		}
 	}
+  else if($_GET["action"] == "checkout") {
+    
+    // Insert new order to db
+    // Get last inserted record ID
+    // loop on the cart and insert record for each item in order_products table
+    // deduct quantity from products and save to products table
+  }
 }
 ?>
 
@@ -434,42 +441,43 @@ if(isset($_GET["action"]))
       <div class="layout-inline row">
         
         <div class="col col-pro layout-inline">
-        <?php echo $values["item_name"]; ?>
+          <?php echo $values["item_name"]; ?>
         </div>
         
         <div class="col col-price col-numeric align-center ">
-        <?php echo $values["item_price"]; ?>
+          <?php echo $values["item_price"]; ?>
         </div>
 
         <div class="col col-qty layout-inline">
-        <?php echo $values["item_quantity"]; ?>
+          <?php echo $values["item_quantity"]; ?>
         </div>
         
         <div class="col col-total col-numeric"> 
-        <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?>           
+          <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?>           
         </div>
 
         <div class="col col-total col-numeric"> 
-        <a href="cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a>           
+          <a href="cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a>           
         </div>
       </div>
-  
-       <div class="tf">
+    
+       <?php 
+       $total += $values["item_quantity"] * $values["item_price"];
+      }
+        ?>
+      <div class="tf">
           <div class="row layout-inline">
            <div class="col">
              <p>Total</p>
-           <!-- <p style=" align:right"> -->
-             <?php
-						  echo number_format($values["item_quantity"] * $values["item_price"], 2);
-						}
-					?>
+              <!-- <p style=" align:right"> -->
+                <?php
+                  echo number_format($total, 2);
+    }
+              ?>
            </div>
            <div class="col"></div>
          </div>
-       </div>  
-       <?php 
-     }
-        ?>       
+       </div>       
   </div>
     
     <a href="#" class="btn btn-update">Checkout</a>

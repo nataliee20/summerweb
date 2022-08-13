@@ -850,7 +850,7 @@ body {
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 99;
 }
 
 .dropdown-content a {
@@ -921,9 +921,9 @@ echo'   <div class="topnav">
       <a href="http://localhost/summerweb/logout.php">logout</a>
     </div>
   </div>
+  <a href="http://localhost/summerweb/cart.php">cart</a>
   <input name="term" type="text" id="term" onkeyup="getResult()" placeholder="Search Term..." />
 	<div id="result"></div>
- 
 </div>';
 
 }

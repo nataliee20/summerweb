@@ -6,39 +6,39 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
      /*nav*/
-body {
-   background-color: #FF7518;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  body {
+    background-color: #FF7518;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
-.topnav a.active {
-  background-color: #FF7518;
-  color: white;
-}
-.shops{
- font-weight:bold ;
+  .topnav a.active {
+    background-color: #FF7518;
+    color: white;
+  }
+  .shops{
+  font-weight:bold ;
 
-}
+  }
 
 
  
