@@ -23,11 +23,12 @@ if(isset($_POST['Submit'])){
 	$fn = $_POST['FName'];
 	$ln = $_POST['LName'];
 	$email = $_POST['Email'];
+	$address = $_POST['address'];
 
 
 	 
-	$sql  = "INSERT INTO users (UserName, Password, FName, LName, Email) VALUES
-	('$uname', '$pass', '$fn', '$ln', '$email')";
+	$sql  = "INSERT INTO users (UserName, Password, FName, LName, Email,address) VALUES
+	('$uname', '$pass', '$fn', '$ln', '$email','$address')";
 	 
 	if ($conn->query($sql) === TRUE) {
 		?>
@@ -317,8 +318,18 @@ echo'   <div class="topnav">
     			</div>
     			<div class="clr"></div>
     		</div>
-    		<!---Password---->
+    		<!---address---->
 
+
+			<div class="box">
+          <label for="address" class="fl fontLabel">  Address: </label>
+    			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+    			<div class="fr">
+    					<input type="text" required name="address"
+              placeholder="address " class="textBox">
+    			</div>
+    			<div class="clr"></div>
+    		</div>
 
 
     		<!---Submit Button------>

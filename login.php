@@ -26,12 +26,13 @@ $sql = "SELECT * from Users where UserName ='$UserName' and Password='$Password'
 $result = mysqli_query($conn, $sql);
 	if ($row = mysqli_fetch_array($result)) {
 		
-	  $_SESSION['ID'] = $row[6];
+	  $_SESSION['ID'] = $row[5];
       $_SESSION["UserName"] = $row[0];
       $_SESSION["Password"] = $row[1];
 	  $_SESSION['FName'] = $row[2];
 	  $_SESSION['LName'] = $row[3];
 	  $_SESSION['Email'] = $row[4];
+	  $_SESSION['passwird'] = $row[6];
 	  echo $_SESSION['ID'];
       ?>
       <div class= "success">

@@ -268,9 +268,9 @@ while($row=mysqli_fetch_array($result))
        $FName=$row[2];
        $LName=$row[3];
        $Email=$row[4];
-       $Age=$row[5];
-       $UserID=$row[6];
-}    
+       $UserID=$row[5];
+       $Address=$row[6];
+}   
 
 ?> <center><h2>
     <?php
@@ -321,6 +321,11 @@ echo '<span><a class="actions"href = "editUser.php?x='.$UserID.'">Edit User</a><
                                                                     <div class="col-sm-6">
                                                                         <p class="m-b-10 f-w-600">Email</p>
                                                                         <h6 class="text-muted f-w-400"><?php print $_SESSION['Email'] ?></h6>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <p class="m-b-10 f-w-600">Address</p>
+                                                                        <h6 class="text-muted f-w-400"><?php echo $Address; ?></h6>
                                                                     </div>
                                                                     
                                                                 <ul class="social-link list-unstyled m-t-40 m-b-10">

@@ -164,8 +164,8 @@ echo'   <div class="topnav">
         $FName=$row[2];
         $LName=$row[3];
         $Email=$row[4];
-        $Age=$row[5];
-        $UserID=$row[6];
+        $UserID=$row[5];
+        $Address=$row[6];
       }
 ?>
 
@@ -211,10 +211,16 @@ echo'   <div class="topnav">
             <input type="text" class="form-control" id="email" value="<?php echo  $Email;?>" name="email">
 		</div>
 
+    <div class="form-group">
+            <label for="productname">Address</label>
+            <input type="text" class="form-control" id="address" value="<?php echo  $Address;?>" name="address">
+		</div>
+
 
 
 
 <input type="submit" value="submit" name="submit" class="btn ">
+
 
 
 	</form>
@@ -237,7 +243,7 @@ if(isset($_POST['submit'])){
 	// echo $_POST['fname'];
 	// echo $_POST['lname'];
 	// echo $_POST['email'];
-	$sql="UPDATE users SET UserName='".$_POST['username']."',FName='".$_POST['fname']."',LName='".$_POST['lname']."',Email='".$_POST['email']."', Password='".$_POST['password']."' WHERE UserID = '".$_GET['x']."'";
+	$sql="UPDATE users SET UserName='".$_POST['username']."',FName='".$_POST['fname']."',LName='".$_POST['lname']."',Email='".$_POST['email']."', Password='".$_POST['password']."', Address='".$_POST['address']."' WHERE UserID = '".$_GET['x']."'";
 	
 	
 //"update products set Name ='".$_POST['productname']."', Description = '".$_POST['description']."', Price = '".$_POST['price']."', where ProductID = '".$_GET['X']."'";
@@ -256,8 +262,9 @@ if(isset($_POST['submit'])){
 		$_SESSION["FName"]=$_POST["fname"];
 		$_SESSION["Password"]=$_POST["password"];
 		$_SESSION["Email"]=$_POST["email"];
+    $_SESSION["Address"]=$_POST["address"];
 		
-		header("Location:profile.php");
+		//header("Location:profile.php");
 	}
 }
 
