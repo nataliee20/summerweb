@@ -243,7 +243,7 @@ echo'   <div class="topnav">
               
 
             
-            <span class="Active"  > <a href="chat">Chat</a> </span>
+            <span class="Active"  > <a href="./Chat.php">Chat</a> </span>
                      
                
             </div>
