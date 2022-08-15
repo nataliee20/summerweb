@@ -3,7 +3,6 @@ session_start();
 ?>
 <style>
 *{   
-  
     flex-direction=row;
       justify-content: center;
       align-items: center;
@@ -69,6 +68,7 @@ h1{
  
 @media screen and (max-width:1000px){
     .about-section{
+      background-color: white !important;
         background-size: 100%;
         padding: 100px 40px;
     }
@@ -107,38 +107,57 @@ span{
  
  
 }
- /*nav*/
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  /*nav*/
+  body {
+    background-color: white !important;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  .topnav a, .dropdown {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+  .topnav a:hover{
+    background-color: #ddd;
+    color: black;
+  }
+  .topnav .dropdown:hover {
+    background-color: green;
+    color: black;
+  }
 
-.topnav a.active {
-  background-color: #FF7518;
-  color: white;
-}
- /* //dropdown */
+  .topnav a.active {
+    background-color: #FF7518;
+    color: white;
+  }
+  .shops{
+  font-weight:bold ;
 
- .h2 {
+  }
+
+  .dropbtn{
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    background: transparent !important;
+  }
+  .dropdown:hover .dropbtn{
+    background: transparent !important;
+  }
+  /* //dropdown */
+
+  .h2 {
     background-color: white;
     color: white;
     padding: 16px;
@@ -158,6 +177,7 @@ body {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    top: 50px;
   }
 
   .dropdown-content a {
@@ -172,7 +192,6 @@ body {
   .dropdown:hover .dropdown-content {display: block;}
 
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
         </style>
 <body>
 <?php

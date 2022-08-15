@@ -4,11 +4,69 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-
+  
 <style>
-     /*nav*/
+              .cards {
+                background-color: #FF7518;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                max-width: 300px;
+                margin: auto;
+                text-align: center;
+                font-family: arial;
+                max-height: 550px;
+                height: 550px;
+                margin-bottom: 1.5rem;
+                font-size: 12px;
+            }
+
+            .cards form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+            }
+
+            .price {
+                color: grey;
+                font-size: 22px;
+            }
+
+            .cards button, .cards input[type=submit] {
+                border: none;
+                outline: 0;
+                padding: 12px;
+                color: white;
+                background-color: #000;
+                text-align: center;
+                cursor: pointer;
+                width: 100%;
+                font-size: 18px;
+            }
+
+            .cards input[type=number] {
+                width: 30%;
+                margin-bottom: 3px;
+            }
+
+            .cards button:hover {
+                opacity: 0.7;
+
+            }
+
+            .product-image img {
+                max-height: 200px;
+                height: 200px;
+            }
+
+            .f-16 {
+                font-size: 25px;
+                padding: 60px;
+            }
+
+             /*nav*/
   body {
-    background-color: #FF7518;
+    background-color: white ;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -126,9 +184,9 @@ echo'   <div class="topnav">
 </div>';
 }
 ?>
-<div class="w3-container">
+        <div id="product-grid" style="display: flex;flex-wrap: wrap;justify-content: center;">
 
-<h1 style="text-align:center; font-weight: bold;">Shops</h1>
+
 
 <?php
   $servername = "localhost";
@@ -145,19 +203,28 @@ echo'   <div class="topnav">
   while($row = mysqli_fetch_array($result))
   {
 ?>
-<div class="w3-bar w3-white" style="height:150px; width:1000px;">
-  <div class="w3-bar-item"><?php echo $row['Name']; ?></div>
-  <div class="product-image">
-    <a href="http://localhost/summerweb/cat.php?id=<?php echo $row['ShopID']; ?>">
-      <img src="http://localhost<?php echo $row['Logo']; ?>" style="height:120px; padding:20px;">
-      <h8 style=" text-align: top; text-align: left;"> <?php echo $row['Description']; ?>  </h8>
-    </a>
-  </div>
-</div>
+ <div style=" float:right; margin:10px">
+ <a href="http://localhost/summerweb/cat.php?id=<?php echo $row['ShopID']; ?>"> 
+           <div class="product-item cards" width="200px">
+               <form method="post" action="cart.php">
+                  <div class="mt-2 f-16"><strong><?php echo $row['Name']; ?></strong></div>
+                    <div class="product-image">
+                           
+                        <img src="http://localhost<?php echo $row['Logo']; ?>" style="height:170px; padding:20px;">
+                        </div>
+                        <h3 style="  text-align: center;"> <?php echo $row['Description']; ?>  </h3>
+                        
+
+                    <div>
+                    
+                  </div>
+                </form>
+             </div>
+   </div>
+
 <?php } ?>
 
 
 
 </body>
 </html>
-                    

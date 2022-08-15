@@ -31,6 +31,7 @@
       color: white;
     }
     .w3-container{
+      width: 1000;
       position: absolute;
         top: 50%;  
         left: 43.7%; 
