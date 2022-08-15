@@ -5,7 +5,7 @@ session_start();
 
 <style>
    body {
-    background-color: #f9f9fa;
+    background-color: white !important;
 }
 
 .padding {
@@ -176,42 +176,91 @@ p {
 }
 
 
-/* //dropdown */
-<style>
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
+ /*nav*/
+ body {
+    background-color: #FF7518;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-.dropdown {
-   /* position: relative;  */
-  display: inline-block;
-}
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+  .topnav a, .dropdown {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+  .topnav a:hover{
+    background-color: #ddd;
+    color: black;
+  }
+  .topnav .dropdown:hover {
+    background-color: green;
+    color: black;
+  }
 
-.dropdown-content a:hover {background-color: #ddd;}
+  .topnav a.active {
+    background-color: #FF7518;
+    color: white;
+  }
+  .shops{
+  font-weight:bold ;
 
-.dropdown:hover .dropdown-content {display: block;}
+  }
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropbtn{
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    background: transparent !important;
+  }
+  .dropdown:hover .dropbtn{
+    background: transparent !important;
+  }
+  /* //dropdown */
+
+  .h2 {
+    background-color: white;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    /* position: relative;  */
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: white;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style>
 
  

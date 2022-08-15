@@ -392,12 +392,24 @@ if(isset($_GET["action"]))
 	}
   else if($_GET["action"] == "checkout") {
     
+  //   $productID=$_SESSION["product_id"];
+  //   $quantity=$_SESSION["quantity"];
+
+  //   // $userID=$_SESSION["UserID"]
+  //   $sql  = "INSERT INTO order_products (product_id, quantity) VALUES
+	// ('$productID', '$quantity')";
+
+	//  if ($conn->query($sql) === TRUE) {
+		
+	// 	echo "your order is made!";
+	 
+    
     // Insert new order to db
     // Get last inserted record ID
     // loop on the cart and insert record for each item in order_products table
     // deduct quantity from products and save to products table
-  }
-}
+ // }
+}}
 ?>
 
 <html>

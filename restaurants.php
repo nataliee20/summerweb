@@ -18,7 +18,7 @@ session_start();
     background-color: #333;
   }
 
-  .topnav a {
+  .topnav a, .dropdown {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -27,8 +27,12 @@ session_start();
     font-size: 17px;
   }
 
-  .topnav a:hover {
+  .topnav a:hover{
     background-color: #ddd;
+    color: black;
+  }
+  .topnav .dropdown:hover {
+    background-color: green;
     color: black;
   }
 
@@ -41,6 +45,15 @@ session_start();
 
   }
 
+  .dropbtn{
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    background: transparent !important;
+  }
+  .dropdown:hover .dropbtn{
+    background: transparent !important;
+  }
   /* //dropdown */
 
   .h2 {
@@ -63,6 +76,7 @@ session_start();
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    top: 50px;
   }
 
   .dropdown-content a {
